@@ -12,3 +12,20 @@ COLOR1 可以传递一组值 4个
 
 3. **片元函数传递给系统**
 SV_Target 颜色值，显示到屏幕上
+
+4. **光照**
+自发光
+高光反射 Specular
+漫反射 Diffuse=直射光颜色*cos（光和法线）
+环境光
+
+#include"Lighting.cginc" **光照头文件**
+-WorldSpaceLightPos0.xyz **入射平行光的位置**
+_LightColor0.rgb **光照颜色**
+
+normalize() **对向量进行单位化**
+mul() **矩阵点乘**
+UnityObjectToClipPos() **将物体空间的点转化为剪裁空间的点**
+UNITY_LIGHTMODEL_AMBIENT.rgb **获取环境光（由skybox得到）**
+max(n1,n2) **两个数取最大的**
+dot(n1,n2) **向量点乘**
