@@ -18,7 +18,7 @@ SV_Target 颜色值，显示到屏幕上
 高光反射 Specular=直射光*pow（max（cos，0），高光参数x）角度是反射光方向和视野方向的夹角
 漫反射 Diffuse=直射光颜色*maxn（cos（光和法线））
 环境光
-
+5. **关键字**
 `#include"Lighting.cginc"` **光照头文件**
 `-WorldSpaceLightPos0.xyz` **入射平行光的位置**
 `_LightColor0.rgb` **光照颜色**
