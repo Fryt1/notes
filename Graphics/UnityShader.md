@@ -15,17 +15,20 @@ SV_Target 颜色值，显示到屏幕上
 
 4. **光照**
 自发光
-高光反射 Specular
-漫反射 Diffuse=直射光颜色*cos（光和法线）
+高光反射 Specular=直射光*pow（max（cos，0），高光参数x）角度是反射光方向和视野方向的夹角
+漫反射 Diffuse=直射光颜色*maxn（cos（光和法线））
 环境光
 
-#include"Lighting.cginc" **光照头文件**
--WorldSpaceLightPos0.xyz **入射平行光的位置**
-_LightColor0.rgb **光照颜色**
+`#include"Lighting.cginc"` **光照头文件**
+`-WorldSpaceLightPos0.xyz` **入射平行光的位置**
+`_LightColor0.rgb` **光照颜色**
 
-normalize() **对向量进行单位化**
-mul() **矩阵点乘**
-UnityObjectToClipPos() **将物体空间的点转化为剪裁空间的点**
-UNITY_LIGHTMODEL_AMBIENT.rgb **获取环境光（由skybox得到）**
-max(n1,n2) **两个数取最大的**
-dot(n1,n2) **向量点乘**
+`normalize()` **对向量进行单位化**
+`mul()` **矩阵点乘**
+`UnityObjectToClipPos()` **将物体空间的点转化为剪裁空间的点**
+`UNITY_LIGHTMODEL_AMBIENT.rgb` **获取环境光（由skybox得到）**
+`max(n1,n2)` **两个数取最大的**
+`dot(n1,n2)` **向量点乘**
+`pow（x，y`）**x的y次方**
+`reflect(入射光单位向量，物体发法线)` **计算反射光方向**
+`_WorldSpaceCameraPos.xyz` **获取摄像机的世界坐标**
