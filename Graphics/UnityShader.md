@@ -32,3 +32,17 @@ SV_Target 颜色值，显示到屏幕上
 `pow（x，y`）**x的y次方**
 `reflect(入射光单位向量，物体发法线)` **计算反射光方向**
 `_WorldSpaceCameraPos.xyz` **获取摄像机的世界坐标**
+
+6. **UnityCG.cginc 中一些常用函数**
+   1. **摄像机方向（视角方向）**
+`float3 WorldSpaceViewDir(float4 v)` **根据模型空间中的顶点坐标 得到 （世界空间）这个点到摄像机的观察方向**
+`float3 UnityWorldSpaceViewDir(float4 v)` **世界空间中的顶点坐标 ->世界坐标下这个点到摄像机的观察方向**
+`float3 ObjSpaceViewDir(float4 v)` **模型空间顶点坐标->模型空间下这个点到摄像机的观察方向**
+   2. **光源方向**
+`float3 WorldSpaceLightDir(float4 v)` **模型空间中的顶点坐标->世界空间下这个点到光源的方向**
+`float3 UnityWorldSpaceLightDir(float4 v)` **世界空间中的顶点坐标->世界坐标下这个点到光源的方向**
+`float3 ObjSpaceLightDir(float4 v)` **模型空间顶点坐标->模型空间下这个点到光源的方向**
+   3. **方向转换**
+`float3 UnityObjectToWorldNormal(float3 norm)` **把法线方向 模型空间->世界空间**
+`float3 UnityObjectToWorldDir(float3 Dir)` **把方向 模型空间->世界空间**
+`float3 UnityWorldToObjectDir(float3 Dir)`  **把方向 世界空间->模型空间**
