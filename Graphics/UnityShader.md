@@ -46,3 +46,7 @@ SV_Target 颜色值，显示到屏幕上
 `float3 UnityObjectToWorldNormal(float3 norm)` **把法线方向 模型空间->世界空间**
 `float3 UnityObjectToWorldDir(float3 Dir)` **把方向 模型空间->世界空间**
 `float3 UnityWorldToObjectDir(float3 Dir)`  **把方向 世界空间->模型空间**
+
+`TANGENT_SPACE_ROTATION` **调用函数后，会得到将模型空间下方向转换到切线空间下的矩阵
+
+**法线贴图上像素与对应的法线的关系** `像素=（法线+1）/2`
